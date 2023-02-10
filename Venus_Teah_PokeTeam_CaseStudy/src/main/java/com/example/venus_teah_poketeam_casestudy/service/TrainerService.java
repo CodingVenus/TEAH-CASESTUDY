@@ -38,14 +38,19 @@ public class TrainerService {
 
 
     //UPDATE
-    public void updateTrainer(Long trainerId, Trainer trainerObject) {
-        Optional<Trainer> trainerData = trainerRepository.findById(trainerId);
-        if (trainerData.isPresent()) {
-            Trainer updatedTrainer = trainerData.get();
-            updatedTrainer.setName(trainerObject.getName());
+    public Trainer updateTrainer(Long trainerId, Trainer trainerObject) {
+//        Optional<Trainer> trainerData = trainerRepository.findById(trainerId);
+//        if (trainerData.isPresent()) {
+//            Trainer updatedTrainer = trainerData.get();
+//            updatedTrainer.setName(trainerObject.getName());
+        Trainer existingTrainer = trainerRepository.findById(trainerId).get();
+        existingTrainer.setName(trainerObject.getName());
 
-            trainerRepository.save(updatedTrainer);
-        }
+          return trainerRepository.save(existingTrainer);
+//            return trainerRepository.save(updatedTrainer);
+
+//        }
+
     }
 
 
@@ -58,7 +63,7 @@ public class TrainerService {
     }
 
         //ALL
-    public void deleteAllTrainer() {
+    public void deleteAllTrainers() {
 
         trainerRepository.deleteAll();
     }
