@@ -24,22 +24,23 @@ public class TrainerController {
         return trainerService.getTrainerById(trainerId);
     }
 
-    @PostMapping("/new" )
-    public void createTextBook(@RequestBody Trainer trainerObject) {
+    @PostMapping("/trainer/new" )
+    public void createTrainer(@RequestBody Trainer trainerObject) {
         trainerService.createTrainer(trainerObject);
     }
 
-    @PutMapping("/update/{trainerId}")
-    public void createTextBook(@PathVariable Long trainerId, @RequestBody Trainer trainerObject) {
+    @PutMapping("/update/trainer/{trainerId}")
+    public void updateTrainer(@PathVariable Long trainerId, @RequestBody Trainer trainerObject) {
         trainerService.updateTrainer(trainerId, trainerObject);
+
     }
     @DeleteMapping("/trainer/{id}")
-    public void deleteTextBook(@PathVariable("id") Long id) {
+    public void deleteTrainerById(@PathVariable("id") Long id) {
         trainerService.deleteTrainerById(id);
     }
 
     @DeleteMapping("/trainer")
-    public void deleteTextBook() {
+    public void deleteAllTrainers() {
         trainerService.deleteAllTrainers();
     }
 

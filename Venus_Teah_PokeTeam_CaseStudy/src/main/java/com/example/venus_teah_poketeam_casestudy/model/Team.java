@@ -5,28 +5,25 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.Serializable;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
 @Table
-public class Trainer  {
-
-
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Team {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name")
     private String name;
 
-
-    //MAPPING TO TEAM
+    //MAPPING TO TRAINER LIST
+    //ONE TO MANY
+    @OneToMany(mappedBy = "team")
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name= "team_id", referencedColumnName = "id")
-    private Team team;
+    private List<Trainer> trainerList;
 
 }
