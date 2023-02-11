@@ -10,23 +10,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.Serializable;
 
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Data
 @Entity
 @Table
 public class Trainer  {
 
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name")
     private String name;
 
 
     //MAPPING TO TEAM
+    @ManyToOne
     @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name= "team_id", referencedColumnName = "id")
     private Team team;
 
 }

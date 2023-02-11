@@ -5,11 +5,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import java.util.List;
 
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 @Data
 @Entity
 @Table
@@ -21,9 +23,7 @@ public class Team {
     private String name;
 
     //MAPPING TO TRAINER LIST
-    //ONE TO MANY
     @OneToMany(mappedBy = "team")
-    @JsonIgnore
+//    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
     private List<Trainer> trainerList;
-
 }

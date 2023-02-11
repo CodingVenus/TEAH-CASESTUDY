@@ -32,7 +32,6 @@ public class TrainerController {
     @PutMapping("/update/trainer/{trainerId}")
     public void updateTrainer(@PathVariable Long trainerId, @RequestBody Trainer trainerObject) {
         trainerService.updateTrainer(trainerId, trainerObject);
-
     }
     @DeleteMapping("/trainer/{id}")
     public void deleteTrainerById(@PathVariable("id") Long id) {

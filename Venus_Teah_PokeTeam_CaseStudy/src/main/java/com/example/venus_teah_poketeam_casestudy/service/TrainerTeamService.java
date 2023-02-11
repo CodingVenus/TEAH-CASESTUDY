@@ -25,8 +25,10 @@ public class TrainerTeamService {
         Team existingTeam = teamRepository.findById(teamId).get();
         Trainer newTrainer = trainerRepository.findById(trainerId).get();
 
-        existingTeam.getTrainerList().add(newTrainer);
-        teamRepository.save(existingTeam);
+        newTrainer.setName(newTrainer.getName());
+        newTrainer.setTeam(existingTeam);
+//        existingTeam.getTrainerList().add(newTrainer);
+        trainerRepository.save(newTrainer);
 
     }
 
