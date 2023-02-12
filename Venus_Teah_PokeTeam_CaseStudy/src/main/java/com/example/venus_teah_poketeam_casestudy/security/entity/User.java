@@ -1,4 +1,4 @@
-package com.example.venus_teah_poketeam_casestudy.security.user;
+package com.example.venus_teah_poketeam_casestudy.security.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
