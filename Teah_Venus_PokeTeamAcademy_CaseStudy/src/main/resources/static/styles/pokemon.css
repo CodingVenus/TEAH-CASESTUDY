@@ -1,0 +1,91 @@
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+
+
+    justify-content: center;
+gap: 1rem;
+}
+
+.card {
+    width: 250px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    height: 150px;
+
+
+
+}
+
+.card.grass {
+    background-color: #78c850;
+}
+
+.card.fire {
+    background-color: #f08030;
+}
+
+.card.water {
+    background-color: #6890f0;
+}
+
+.card.poison {
+    background-color: mediumpurple;
+}
+
+.card.fighting {
+    background-color: tan;
+}
+
+.card.ground {
+    background-color: brown;
+}
+
+.card.psychic {
+    background-color: chocolate;
+}
+
+.card.rock {
+    background-color: burlywood;
+}
+
+.card.electric {
+    background-color: #eed502;
+}
+
+.card.normal {
+    background-color: #ffffff;
+}
+
+
+.card.flying {
+    background-color: #a68383;
+}
+.card.fairy {
+    background-color: pink;
+}
+
+.card.bug {
+    background-color: #5b701e;
+}
+
+
+
+

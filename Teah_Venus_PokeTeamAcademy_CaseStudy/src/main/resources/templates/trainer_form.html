@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+
+    <!--  STYLING-->
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,400;1,500&display=swap/"
+          rel="stylesheet">
+
+    <link th:href="@{/styles/trainer.css}" rel="stylesheet"/>
+
+</head>
+
+
+<body>
+
+<div class="pokelogo1">
+    <img th:src="@{/img/Pokemon-Logo-PNG-Pic.png}" alt="Pokemon Logo">
+</div>
+
+<div class="pokelogo2">
+    <img th:src="@{/img/Pokemon-Logo-PNG-Pic.png}" alt="Pokemon Logo">
+</div>
+
+<h1>Before We Begin,<br> Let's Get to Know a Little More About You!</h1>
+
+<div class="pokelogo">
+    <img th:src="@{/img/Pikachu-ThumbsUp.png}" alt="Pokemon Logo">
+</div>
+
+
+<div class="signup">
+    <div class="form">
+
+        <form th:action="@{/trainer/save}" th:object="${trainer}" method= "post"
+              name="login-form" class="login-form">
+
+            <!--       NAME FIELD-->
+            <input type="text" th:field="*{name}" placeholder="Enter your name" name="name" required autofocus="autofocus"/>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+
+            <!--       LOCATION FIELD-->
+            <select id="towns" th:field="*{hometown}" name="towns" required autofocus="autofocus">
+                <option value="" selected>Select Where You're From:</option>
+                <option value="pallet">PALLET TOWN</option>
+                <option value="viridian">VIRIDIAN CITY</option>
+                <option value="pewter">PEWTER CITY</option>
+                <option value="cerulean">CERULEAN CITY</option>
+                <option value="vermillion">VERMILLION CITY</option>
+            </select>
+            <div class="alert alert-warning" th:if="${#fields.hasErrors('hometown')}" th:errors="*{hometown}"></div>
+
+
+
+<!--            <input type="submit" class="button" value="CONTINUE" onclick="validateForm()">-->
+            <input type="submit" class="button" value="CONTINUE" >
+
+
+        </form>
+    </div>
+</div>
+
+
+<!--PERSONAL JS SCRIPT-->
+<!--<script type="text/javascript" th:src="@{/scripts/trainer.js}"></script>-->
+<!--BOOTSTRAP JS SCRIPT-->
+
+</body>
+
+</html>
