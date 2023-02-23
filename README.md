@@ -23,11 +23,13 @@ This web app was originally envisioned to be an interactive website where fans o
 - POSTMAN
 - MYSQL
 
+## HOW TO RUN
+Adjust the credentials int he application properties to match your workbecnh. Run the program as a Spring Boot Application. This will create the necesary database and tables. Next run the sql file in the folder. This will populate your team table. From here you can register as a new user and login. 
 
 ## THE PLAN
 Build out a Spring Boot backend that would work with Thymeleaf to help craft a functional Full Stack Application.
 
-### TABLE DIAGRAM
+### DATABASE DIAGRAM
 This can be found in the folder.
 
 
